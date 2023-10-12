@@ -1,4 +1,4 @@
-const UserModel = (sequelize: any, DataTypes: any) => {
+const UserModel = (sequelize, DataTypes) => {
     const User = sequelize.define('User', {
         id: DataTypes.INTEGER,
         nome: DataTypes.STRING,
