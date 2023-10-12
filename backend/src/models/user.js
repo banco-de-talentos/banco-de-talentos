@@ -9,6 +9,8 @@ const UserModel = (sequelize, DataTypes) => {
         telefone: DataTypes.INTEGER,
         portfolio: DataTypes.STRING, 
         currículo: DataTypes.STRING, 
+        createdAt: DataTypes.DATE,
+        updatedAt: DataTypes.DATE
     });
   
     return User;

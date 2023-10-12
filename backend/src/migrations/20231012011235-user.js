@@ -18,6 +18,8 @@ module.exports = {
       telefone: { type: Sequelize.INTEGER, allowNull: false },
       portfolio: { type: Sequelize.STRING, allowNull: true },
       currículo: { type: Sequelize.STRING, allowNull: true },
+      createdAt: { type: Sequelize.DATE, allowNull: false },
+      updatedAt: { type: Sequelize.DATE, allowNull: false }
     });
   },
 
