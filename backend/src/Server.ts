@@ -1,11 +1,6 @@
-import express from 'express';
+import { App } from './App';
+import 'dotenv/config';
 
-const app = express();
+const PORT = process.env.APP_PORT || 3001;
 
-app.get('/', (request: any, response: any) => {
-  return response.send('Hello World!');
-});
-
-app.listen(3001, () => {
-  console.log('RODANDO!');
-});
+new App().start(PORT);

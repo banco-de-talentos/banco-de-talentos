@@ -7,19 +7,22 @@ module.exports = {
       id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
-        notNull: true,
+        allowNull: false,
         primaryKey: true
       },
       nome: { type: Sequelize.STRING, allowNull: false },
       email: { type: Sequelize.STRING, allowNull: false },
       level: { type: Sequelize.INTEGER, allowNull: false },
       linkedin: { type: Sequelize.STRING, allowNull: false },
-      gitHub: { type: Sequelize.STRING, allowNull: false },
+      github: { type: Sequelize.STRING, allowNull: false },
       telefone: { type: Sequelize.INTEGER, allowNull: false },
       portfolio: { type: Sequelize.STRING, allowNull: true },
       currículo: { type: Sequelize.STRING, allowNull: true },
-      createdAt: { type: Sequelize.DATE, allowNull: false },
-      updatedAt: { type: Sequelize.DATE, allowNull: false }
+      created_at: { type: Sequelize.DATE, allowNull: false, defaultValue:Sequelize.literal('CURRENT_TIMESTAMP()') },
+      updated_at: { type: Sequelize.DATE, allowNull: false, defaultValue:Sequelize.literal('CURRENT_TIMESTAMP()') }
+    },{
+      timestamps: false,
+      underscored: true,
     });
   },
 
