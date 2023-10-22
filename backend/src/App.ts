@@ -14,7 +14,10 @@ class App {
 
     this.app.post('/finish', candidate.createCandidate);
     
-    this.app.get('/candidates', candidate.findAllCandidates);
+    //Adicionar chave=valor na url(entra depois do ?) para buscar o que deseja
+    this.app.get('/candidates/search?', candidate.findCandidates);
+
+    //this.app.post('/candidates/search/:param', candidate.findCandidateByEmail);
   }
 
   private config():void {

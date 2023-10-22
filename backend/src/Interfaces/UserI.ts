@@ -12,9 +12,16 @@ interface UserI {
     updatedAt?: Date;
 }
 
+interface searchCandidateI {
+    nome: string;
+    email: string;
+    github: string;
+    telefone: number;
+  }
+
 interface ErrorI {
     status: number;
     message: string;
 }
 
-export { UserI, ErrorI };
+export { UserI, searchCandidateI, ErrorI };

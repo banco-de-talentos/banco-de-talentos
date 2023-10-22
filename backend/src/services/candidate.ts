@@ -1,33 +1,48 @@
-import { UserI, ErrorI } from '../Interfaces/UserI'
+import { candidateSchema, searchCandidateSchema } from '../utils/validate';
+import { UserI, ErrorI, searchCandidateI } from '../Interfaces/UserI'
 import User from '../models/User';
+import { Error } from 'sequelize';
 
 export class candidateS {
     static async createCandidate(data: UserI): Promise<UserI | ErrorI> {
         const { nome, email, level, linkedin, github, telefone, portfolio } = data;
+
+        const { error } = candidateSchema.validate(data);
+        if (error) throw { status: 400, message: error.message };
+
+        const exists: UserI | null = await User.findOne({ where: { email, nome, telefone, linkedin, github } });
+        if (exists) throw { status: 400, message: "Usuário já cadastrado" };
+
         const user: UserI | null = await User.create({ nome, email, level, linkedin, github, telefone, portfolio })
-        if(user) {
-            return user;
-        } else {
-           return { status: 400, message: "mensagem de erro" } // Ajustar com Joi
-        }
+        return user
     }
 
-    static async findAllCandidates(): Promise<UserI[] | ErrorI> {
-        const users: UserI[] = await User.findAll();
-        if(users.length === 0) {
-            return { status: 400, message: "No candidates registered yet" }
-        } else {
-            return users;
-        }
-    }
+    static async findCandidates(searchBy: any): Promise<UserI[] | ErrorI> {
 
-    static async findOneCandidate(data: UserI): Promise<UserI | ErrorI> {
-        const { email } = data;
-        const user: UserI | null = await User.findOne({ where: { email } })
-        if (user) {
-            return user;
-        } else {
-            return { status: 400, message: "Candidate not found" }
+        if(!searchBy) {
+            const users: UserI[] = await User.findAll();
+            
+            if (users.length === 0) {
+                return { status: 400, message: "No candidates registered yet" };
+            } else {
+                return users;
+            }
         }
+
+        const found: UserI[] | any = await User.findAll({ where: { nome: searchBy } });
+        if (found.length === 0) return { status: 404, message: "Candidate not found"};
+        return found;
     }
+/* 
+    static async findCandidate(param: string, data: searchCandidateI): Promise<UserI[] | ErrorI> {
+
+        const { error } = searchCandidateSchema.validate(data);
+        if (error) throw { status: 400, message: error.message };
+
+        const user: UserI[] | null = await User.findAll({ where: { param } });
+        
+        if (!user) throw { status: 404, message: "Candidate not found" }
+
+        return user;
+    } */
 }
