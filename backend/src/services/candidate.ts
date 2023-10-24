@@ -1,7 +1,6 @@
 import { candidateSchema, searchCandidateSchema } from '../utils/validate';
 import { UserI, ErrorI, searchCandidateI } from '../Interfaces/UserI'
 import User from '../models/User';
-import { Error } from 'sequelize';
 
 export class candidateS {
     static async createCandidate(data: UserI): Promise<UserI | ErrorI> {
@@ -29,7 +28,7 @@ export class candidateS {
             }
         }
 
-        const found: UserI[] | any = await User.findAll({ where: { nome: searchBy } });
+        const found: UserI[] | ErrorI = await User.findAll({ where: { nome: searchBy } });
         if (found.length === 0) return { status: 404, message: "Candidate not found"};
         return found;
     }
