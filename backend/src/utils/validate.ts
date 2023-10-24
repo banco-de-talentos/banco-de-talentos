@@ -1,11 +1,11 @@
 import * as Joi from 'joi';
 
 export const candidateSchema = Joi.object({
-  nome: Joi.string().min(2).required().empty().label('nome'),
-  email: Joi.string().email().required().empty().label('email'),
-  level: Joi.number().integer().min(0).max(2).required().empty().label('level'),
-  linkedin: Joi.string().min(2).required().empty().label('linkedin'),
-  github: Joi.string().min(2).required().empty().label('github'),
+  nome: Joi.string().min(2).required().label('nome'),
+  email: Joi.string().email().required().label('email'),
+  level: Joi.number().integer().min(0).max(2).required().label('level'),
+  linkedin: Joi.string().min(2).required().label('linkedin'),
+  github: Joi.string().min(2).required().label('github'),
   telefone: Joi.number().required().label('telefone'),
   portfolio: Joi.string().label('portfolio'),
   curriculo: Joi.any().label('curriculo'),
