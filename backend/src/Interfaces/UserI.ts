@@ -5,7 +5,7 @@ interface UserI {
     level: number;
     linkedin: string;
     github: string;
-    telefone: number;
+    telefone: string;
     portfolio?: string; 
     currículo?: string; 
     createdAt?: Date;
