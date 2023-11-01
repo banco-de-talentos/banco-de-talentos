@@ -15,26 +15,28 @@ export class candidate  {
 
     }
 
-    static async findCandidates(request: Request, response: Response): Promise<object | UserI[]> {
-        const { q } = request.query;
+    static async findCandidate(request: Request, response: Response): Promise<object | UserI[]> {
+
+        const { user } = request.query;
         
-        const users: UserI[] | UserI | any = await candidateS.findCandidates(q);
+        
+        const users: UserI[] | UserI | any = await candidateS.findCandidate(user);
+    
         const { status, message } = users;
+
         if(status){
             return response.status(status).json(message);
         }
         return response.status(200).json(users);
 }
-/* 
-    static async findCandidateByEmail(request: Request, response: Response): Promise<object> {
-        const { param } = request.params;
-        const user: searchCandidateI = request.body;
+ 
+    static async findCandidates(_request: Request, response: Response): Promise<object> {
         try {
-            const found: UserI[] | ErrorI = await candidateS.findCandidate(param, user);
+            const found: UserI[] | ErrorI = await candidateS.findCandidates();
             return response.status(200).json(found);
         } catch(error: any) {
             const { status, message } = error;
             return response.status(status).json(message);
         }
-    } */
+    }
 }
