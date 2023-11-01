@@ -10,7 +10,7 @@ export class candidate  {
             return response.status(201).json(created);
         } catch(error: any) {
             const { status, message } = error;
-            return response.status(status).json(message);
+            return response.status(400).json(message);
         }
 
     }

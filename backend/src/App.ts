@@ -12,6 +12,8 @@ class App {
 
     this.app.get('/', (_req, res) => res.json({ ok: true }));
 
+    this.app.get('/404_not_found', (_req, res) => res.status(404).json({ message: 'Page not found' }));
+
     this.app.post('/finish', candidate.createCandidate);
     
     //Adicionar chave=valor na url(entra depois do ?) para buscar o que deseja
