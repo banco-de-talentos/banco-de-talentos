@@ -4,7 +4,7 @@
   "description": "",
   "main": "Server.ts",
   "scripts": {
-    "dev": "nodemon src/Server.ts ",
+    "dev": " nodemon src/Server.ts ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "restart": "env $(cat .env) npx sequelize db:drop && env $(cat .env) npx sequelize db:create && env $(cat .env) npx sequelize-cli db:migrate"
   },

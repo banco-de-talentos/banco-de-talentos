@@ -1,5 +1,5 @@
-import { candidateSchema, searchCandidateSchema } from '../utils/validate';
-import { UserI, ErrorI, searchCandidateI } from '../Interfaces/UserI'
+import { candidateSchema } from '../utils/validate';
+import { UserI, ErrorI } from '../Interfaces/UserI'
 import User from '../models/User';
 
 export class candidateS {
