@@ -1,10 +1,11 @@
-import './App.css'
+import './assets/styles/App.css';
+import PageRouter from './routes/router';
 
 function App() {
 
   return (
     <>
-      <h1>MEU APP</h1>
+      <PageRouter/>
     </>
   )
 }
