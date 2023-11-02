@@ -8,7 +8,7 @@ class User extends Model {
   declare level: number;
   declare linkedin: string;
   declare github: string;
-  declare telefone: number;
+  declare telefone: string;
   declare portfolio: string;
   declare currículo: string;
   declare createdAt: Date;
@@ -41,7 +41,7 @@ User.init({
     type: DataTypes.STRING,
   },
   telefone: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.STRING,
     allowNull: false
   },
   portfolio: {

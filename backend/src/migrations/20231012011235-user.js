@@ -15,7 +15,7 @@ module.exports = {
       level: { type: Sequelize.INTEGER, allowNull: false },
       linkedin: { type: Sequelize.STRING, allowNull: false },
       github: { type: Sequelize.STRING, allowNull: false },
-      telefone: { type: Sequelize.INTEGER, allowNull: false },
+      telefone: { type: Sequelize.STRING, allowNull: false },
       portfolio: { type: Sequelize.STRING, allowNull: true },
       currículo: { type: Sequelize.STRING, allowNull: true },
       created_at: { type: Sequelize.DATE, allowNull: false, defaultValue:Sequelize.literal('CURRENT_TIMESTAMP()') },

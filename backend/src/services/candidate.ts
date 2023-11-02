@@ -16,32 +16,20 @@ export class candidateS {
         return user
     }
 
-    static async findCandidates(searchBy: any): Promise<UserI[] | ErrorI> {
 
-        if(!searchBy) {
-            const users: UserI[] = await User.findAll();
-            
-            if (users.length === 0) {
-                return { status: 400, message: "No candidates registered yet" };
-            } else {
-                return users;
-            }
-        }
+    static async findCandidate(param: any): Promise<UserI | UserI[] | ErrorI> {
 
-        const found: UserI[] | ErrorI = await User.findAll({ where: { nome: searchBy } });
-        if (found.length === 0) return { status: 404, message: "Candidate not found"};
+        const found: UserI | UserI[] | ErrorI = await User.findAll({ where: { nome: param } });
+
+        if (!found) return { status: 404, message: "Candidate not found" };
         return found;
     }
-/* 
-    static async findCandidate(param: string, data: searchCandidateI): Promise<UserI[] | ErrorI> {
 
-        const { error } = searchCandidateSchema.validate(data);
-        if (error) throw { status: 400, message: error.message };
+    static async findCandidates(): Promise<UserI[] | ErrorI> {
+        const users: UserI[] = await User.findAll();
 
-        const user: UserI[] | null = await User.findAll({ where: { param } });
-        
-        if (!user) throw { status: 404, message: "Candidate not found" }
-
-        return user;
-    } */
+        if (users.length === 0) return { status: 400, message: "No candidates registered yet" };
+        return users;
+    
+    }
 }

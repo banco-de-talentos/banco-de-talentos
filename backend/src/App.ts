@@ -15,9 +15,11 @@ class App {
     this.app.get('/404_not_found', (_req, res) => res.status(404).json({ message: 'Page not found' }));
 
     this.app.post('/finish', candidate.createCandidate);
+
+    this.app.get('/candidates', candidate.findCandidates);
     
-    //Adicionar chave=valor na url(entra depois do ?) para buscar o que deseja
-    this.app.get('/candidates/search?', candidate.findCandidates);
+    //Adicionar USER=valor na url(depois do ?) para buscar o que deseja
+    this.app.get('/candidates/search?', candidate.findCandidate);
 
     //this.app.post('/candidates/search/:param', candidate.findCandidateByEmail);
   }
