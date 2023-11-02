@@ -1,3 +1,10 @@
+
+export default function PageForm2() {
+  return (
+    <div>Página 02</div>
+  )
+}
+
 export const PageForm2 = () => {
   return(
     <div>
@@ -5,3 +12,4 @@ export const PageForm2 = () => {
     </div>
   )
 }
+
