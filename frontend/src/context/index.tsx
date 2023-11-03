@@ -1,6 +1,6 @@
 
 import {  createContext, Reducer, useReducer} from "react";
-import { State, FormProps, FormStates, Action, ContextTypes } from "../types";
+import { State, FormProps, FormStates, Action, ContextTypes, Level } from "../types";
 
 const initialData: State = {
   currentPage: 0,
@@ -9,7 +9,7 @@ const initialData: State = {
   github: '',
   linkedin: '',
   telefone: '',
-  level: 0,
+  level: Level.Junior,
 }
 
 

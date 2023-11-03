@@ -10,6 +10,12 @@ export enum FormStates {
   setLevel,
 } 
 
+export enum Level {
+  Junior = "Junior",
+  Pleno = "Pleno",
+  Senior = "Senior",
+}
+
 export type State = {
   currentPage: number,
   name: string,
@@ -17,7 +23,7 @@ export type State = {
   github: string,
   telefone: string,
   linkedin: string,
-  level: number,
+  level: Level,
 }
 
 export type Action = {
@@ -36,11 +42,11 @@ export type FormProps = {
 }
 
 // export type SelectProps = {
-//   isselected: boolean,
 //   icon: string,
 //   title: string,
 //   description: string,
 //   onClick: () => void;
+//   level: Level;
 // }
 
 // export type SidebarProps = {
