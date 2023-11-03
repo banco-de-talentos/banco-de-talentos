@@ -4,26 +4,26 @@ export enum FormStates {
   setCurrentPage,
   setName,
   setEmail,
+  setLevel,
+  setLinkedin,
   setGithub,
   setTelefone,
-  setLinkedin,
-  setLevel,
 } 
 
 export enum Level {
-  Junior = "Junior",
-  Pleno = "Pleno",
-  Senior = "Senior",
+  Junior = 0,
+  Pleno = 1,
+  Senior = 2,
 }
 
 export type State = {
   currentPage: number,
   name: string,
   email: string,
+  level: Level,
+  linkedin: string,
   github: string,
   telefone: string,
-  linkedin: string,
-  level: Level,
 }
 
 export type Action = {

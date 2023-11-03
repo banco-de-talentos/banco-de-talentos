@@ -6,10 +6,10 @@ const initialData: State = {
   currentPage: 0,
   name: '',
   email: '',
-  github: '',
+  level: Level.Junior,
   linkedin: '',
   telefone: '',
-  level: Level.Junior,
+  github: '',
 }
 
 
@@ -24,14 +24,14 @@ const formReducer: Reducer<State, Action> = (state, action) => {
       return {...state, name: action.payload };
     case FormStates.setEmail:
       return { ...state, email: action.payload};
-    case FormStates.setGithub:
-      return { ...state, github: action.payload };
-    case FormStates.setLinkedin:
-      return { ...state, linkedin: action.payload };
-    case FormStates.setTelefone:
-      return { ...state, telefone: action.payload };
     case FormStates.setLevel:
       return { ...state, level: action.payload };
+    case FormStates.setLinkedin:
+      return { ...state, linkedin: action.payload };
+    case FormStates.setGithub:
+      return { ...state, github: action.payload };
+    case FormStates.setTelefone:
+      return { ...state, telefone: action.payload };
     default:
       return state;
     }
