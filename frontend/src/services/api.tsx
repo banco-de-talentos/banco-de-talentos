@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL: 'REACT_APP_BACKEND_URL',
+    baseURL: 'http://localhost:3001',
 });
 
 //Uso: api.get / api.post/ api.put / api.delete
