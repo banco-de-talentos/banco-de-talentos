@@ -5,7 +5,7 @@ export default function TestPage() {
 
   const [nome, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [level, setLevel] = useState('');
+  const [level, setLevel] = useState(0);
   const [linkedin, setLinkedin] = useState('');
   const [github, setGithub] = useState('');
   const [telefone, setTelefone] = useState('');
@@ -23,7 +23,7 @@ export default function TestPage() {
 
     setName("")
     setEmail("")
-    setLevel("")
+    setLevel(0)
     setLinkedin("")
     setGithub("")
     setTelefone("")
@@ -41,19 +41,23 @@ export default function TestPage() {
           (
           <form>
             <label htmlFor="Nome">Nome</label>
-            <input type="text" id="Nome" onChange={({ target }) => setName(target.value)} />
+            <input type="text" id="Nome" onChange={(e) => setName(e.target.value)} />
             <label htmlFor="Email">Email</label>
-            <input type="text" id="Email" onChange={({ target }) => setEmail(target.value)} />
+            <input type="text" id="Email" onChange={(e) => setEmail(e.target.value)} />
             <label htmlFor="Level">Level</label>
-            <input type="text" id="Level" onChange={({ target }) => setLevel(target.value)} />
+            <select id="Level" onChange={(e) => setLevel(e.target.value === 'junior' ? 0 : e.target.value === 'pleno' ? 1 : 2)}>
+              <option>junior</option>
+              <option>pleno</option>
+              <option>senior</option>
+            </select>
             <label htmlFor="Linkedin">Linkedin</label>
-            <input type="text" id="Linkedin" onChange={({ target }) => setLinkedin(target.value)} />
+            <input type="text" id="Linkedin" onChange={(e) => setLinkedin(e.target.value)} />
             <label htmlFor="Github">Github</label>
-            <input type="text" id="Github" onChange={({ target }) => setGithub(target.value)} />
+            <input type="text" id="Github" onChange={(e) => setGithub(e.target.value)} />
             <label htmlFor="Telefone">Telefone</label>
-            <input type="text" id="Telefone" onChange={({ target }) => setTelefone(target.value)} />
+            <input type="text" id="Telefone" onChange={(e) => setTelefone(e.target.value)} />
             <label htmlFor="Portfolio">Portfolio</label>
-            <input type="text" id="Portfolio" onChange={({ target }) => setPortfolio(target.value)} />
+            <input type="text" id="Portfolio" onChange={(e) => setPortfolio(e.target.value)} />
             <button type="submit" onClick={() => sendData()}> Enviar candidatura</button>
           </form>)
         }
