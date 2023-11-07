@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { api } from "../../services/api"
-import { Link } from "react-router-dom";
+import * as N from "./styles";
 
 export default function PageNotFound() {
 
@@ -18,13 +18,16 @@ export default function PageNotFound() {
     fetchData();
   })
   return (
-    <div>
-      <h1>
-        PÁGINA NÃO ENCONTRADA
-      </h1>
-      <section>
-        <Link to='/'> Página inicial</Link>
-      </section>
-    </div>
+    <N.Container>
+      <div>
+        <h1>404</h1>
+        <h2>
+          PÁGINA NÃO ENCONTRADA
+        </h2>
+      </div>
+      <N.Button>
+        <N.LinkButton to='/'>Página inicial</N.LinkButton>
+      </N.Button>
+    </N.Container>
   )
 }
