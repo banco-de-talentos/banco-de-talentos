@@ -1,4 +1,4 @@
-import { ReactNode, /* MouseEventHandler */  } from "react";
+import { ReactNode, MouseEventHandler   } from "react";
 
 export enum FormStates {
   setCurrentPage,
@@ -51,7 +51,7 @@ export type FormProps = {
 //   selected: boolean;
 // }
 
-// export type ButtonProps = {
-//   prevLink: string,
-//   onNextClick: MouseEventHandler<HTMLButtonElement>;
-// }
+export type ButtonProps = {
+  prevLink: string,
+  onNextClick: MouseEventHandler<HTMLButtonElement>;
+}
