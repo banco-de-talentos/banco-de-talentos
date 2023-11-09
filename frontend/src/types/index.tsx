@@ -35,13 +35,13 @@ export type FormProps = {
   children: ReactNode;
 }
 
-// export type SelectProps = {
-//   isselected: boolean,
-//   icon: string,
-//   title: string,
-//   description: string,
-//   onClick: () => void;
-// }
+export type SelectProps = {
+  isselected: boolean,
+  icon: string,
+  title: string,
+  description: string,
+  onClick: () => void;
+}
 
 export type SidebarProps = {
   icon: string,
