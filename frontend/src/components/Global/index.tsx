@@ -1,13 +1,13 @@
 import { FormProps } from "../../types";
-// import { Header } from "../Header"
-// import { Sidebar } from "../Sidebar"
+import { TopBar } from "../TopBar";
+import { Sidebar } from "../Sidebar"
 import * as T from "./styles";
-// import { useFormContext } from "../../context/useFormContext";
+import { useFormContext } from "../../context/useFormContext";
 // import { useNavigate } from "react-router-dom";
 
 
 export const Global = ({children}: FormProps) => {
-  // const { state } = useFormContext();
+  const { state } = useFormContext();
   // const navigate = useNavigate();
   // state.name !== "" ? navigate('/page2') : alert("Preenha o seu nome completo!")
 
@@ -15,11 +15,11 @@ export const Global = ({children}: FormProps) => {
     <T.Container>
       <T.Area>
         
-        {/* <Header /> */}
+        <TopBar />
 
         <T.Steps>
           <T.Sidebar>
-            {/* <Sidebar
+            <Sidebar
               title="Candidato"
               description="Nome do candidato"
               icon="profile"
@@ -39,7 +39,7 @@ export const Global = ({children}: FormProps) => {
               icon="redes"
               path="/page3"
               selected={state.currentPage === 3}
-            /> */}
+            />
           </T.Sidebar>
           <T.Page>
             { children }
