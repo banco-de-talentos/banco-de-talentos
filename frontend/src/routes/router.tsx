@@ -1,5 +1,5 @@
 import { PageForm1 } from '../pages/PageForm1';
-import PageForm2 from '../pages/PageForm2';
+import { PageForm2 } from '../pages/PageForm2';
 import PageForm3 from '../pages/PageForm3';
 import PageForm4 from '../pages/PageForm4';
 import PageForm5 from '../pages/PageForm5';
