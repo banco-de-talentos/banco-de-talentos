@@ -8,7 +8,13 @@ export enum FormStates {
   setTelefone,
   setLinkedin,
   setLevel,
-} 
+}
+
+export enum Level {
+  Junior = 0,
+  Pleno = 1,
+  Senior = 2,
+}
 
 export type State = {
   currentPage: number,
@@ -17,7 +23,7 @@ export type State = {
   github: string,
   telefone: string,
   linkedin: string,
-  level: number,
+  level: Level,
 }
 
 export type Action = {
