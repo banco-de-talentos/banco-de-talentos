@@ -25,7 +25,7 @@ export const PageForm2 = () => {
   
 
   const handleNextStep = () => {
-    state.name !== "" ? navigate('/page3') : alert("Preencha o seus dados!");
+    state.name !== "" ? navigate('/page03') : alert("Preencha o seus dados!");
   }
   
   const setLevel = (level: number) => {
