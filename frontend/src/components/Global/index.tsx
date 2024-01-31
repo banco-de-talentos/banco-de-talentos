@@ -30,14 +30,14 @@ export const Global = ({children}: FormProps) => {
               title="Nível"
               description="Nível de experiência"
               icon="nivel"
-              path="/page2"
+              path="/page02"
               selected={state.currentPage === 2}
             />
             <Sidebar
               title="Redes"
               description="Suas redes sociais"
               icon="redes"
-              path="/page3"
+              path="/page03"
               selected={state.currentPage === 3}
             />
           </T.Sidebar>
